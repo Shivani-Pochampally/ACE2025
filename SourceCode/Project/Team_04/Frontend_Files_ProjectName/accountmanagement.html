@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Transaction</title>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Bank Transaction</h1>
+    
+    <h2>Account Balance:</h2>
+    <p id="amount">1000</p>
+    
+    <h2>Transaction:</h2>
+    <input type="number" id="transactionAmount" placeholder="Enter amount">
+    <button id="depositBtn">Deposit</button>
+    <button id="withdrawBtn">Withdraw</button>
+    
+    <p id="message"></p>
+</div>
+
+<script>
+    // Initial balance
+    var balance = 1000;
+
+    // Deposit button click handler
+    document.getElementById('depositBtn').addEventListener('click', function() {
+        var amount = parseFloat(document.getElementById('transactionAmount').value);
+        if (!isNaN(amount) && amount > 0) {
+            balance += amount;
+            updateBalance();
+            document.getElementById('message').textContent = '';
+        } else {
+            document.getElementById('message').textContent = 'Please enter a valid amount.';
+        }
+    });
+
+        document.getElementById('withdrawBtn').addEventListener('click', function() {
+        var amount = parseFloat(document.getElementById('transactionAmount').value);
+        if (!isNaN(amount) && amount > 0) {
+            if (balance - amount >= 500) {
+                balance -= amount;
+                updateBalance();
+                document.getElementById('message').textContent = '';
+            } else {
+                document.getElementById('message').textContent = 'Withdrawal amount cannot leave balance less than 500.';
+            }
+        } else {
+            document.getElementById('message').textContent = 'Please enter a valid amount.';
+        }
+    });
+
+       function updateBalance() {
+        document.getElementById('amount').textContent = balance;
+        if (balance < 500) {
+            document.getElementById('amount').textContent = 'Amount less than 500';
+        }
+    }
+</script>
+
+</body>
+</html>

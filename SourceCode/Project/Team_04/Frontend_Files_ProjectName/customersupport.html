@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support - Bank Management System</title>
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Support - Bank Management System</h1>
+
+        <div class="section">
+            <h2>FAQs (Frequently Asked Questions)</h2>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">How do I reset my password?</div>
+                <div class="faq-answer">You can reset your password by visiting the login page and selecting the 'Forgot Password' option. Follow the instructions provided to reset your password securely.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">How can I check my account balance?</div>
+                <div class="faq-answer">You can check your account balance by logging into your account and navigating to the 'Account Summary' page. Your current balances will be displayed there.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">What should I do if I suspect fraudulent activity on my account?</div>
+                <div class="faq-answer">If you suspect fraudulent activity on your account, please contact our customer support immediately. You can find our contact details below.</div>
+            </div>
+            <!-- Add more FAQ items as needed -->
+        </div>
+
+        <div class="section">
+            <h2>Contact Information</h2>
+            <div class="contact-info">
+                <p>If you need further assistance, please contact us:</p>
+                <p>Phone: 1-800-123-4567</p>
+                <p>Email: support@bank.com</p>
+                <p>Hours: Monday - Friday, 9:00 AM - 5:00 PM (local time)</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Bank Management System. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleFAQ(element) {
+            let answer = element.nextElementSibling;
+            answer.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
